@@ -22,10 +22,6 @@ exports.addJob = async (req, res) => {
     }
 };
 
-/**
- * @desc Fetch jobs from API and store in DB
- * @route GET /api/jobs/fetch
- */
 exports.fetchAndStoreJobs = async (req, res) => {
     try {
         const jobs = await fetchJobs();
@@ -36,10 +32,6 @@ exports.fetchAndStoreJobs = async (req, res) => {
     }
 };
 
-/**
- * @desc Recommend jobs based on user's skills
- * @route GET /api/jobs/recommend
- */
 exports.recommendJobs = async (req, res) => {
     try {
         const { skills } = req.user; // Extract user skills from token
