@@ -2,10 +2,6 @@ const Job = require("../models/Job");
 const fetchJobs = require("../utils/fetchJobs");
 const recommendJobs = require("../utils/recommendJobs");
 
-/**
- * @desc Fetch all jobs from MongoDB
- * @route GET /api/jobs
- */
 exports.getJobs = async (req, res) => {
     try {
         const jobs = await Job.find();
@@ -15,10 +11,6 @@ exports.getJobs = async (req, res) => {
     }
 };
 
-/**
- * @desc Add a new job manually (for testing)
- * @route POST /api/jobs
- */
 exports.addJob = async (req, res) => {
     try {
         const { title, company, description, skillsRequired, location, url } = req.body;
